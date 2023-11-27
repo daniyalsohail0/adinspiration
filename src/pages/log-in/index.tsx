@@ -8,8 +8,8 @@ const LogIn: React.FC = () => {
   return (
     <Layout>
       <div className="flex justify-center items-center">
-        <div className="w-2/6 flex flex-col justify-center items-center h-full">
-          <h1 className="text-5xl font-semibold m-4">WELCOME BACK</h1>
+        <div className="w-2/6 flex flex-col justify-center items-center">
+          <h1 className="text-5xl font-semibold text-center my-10">WELCOME BACK</h1>
           <br />
           <GoogleLogin />
           <span className="flex my-4 w-full items-center justify-center">

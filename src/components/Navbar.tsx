@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
                     <li>+ Upload new ad</li>
                 </ul>
                 <div>
-                    <h1>
+                    <h1 className='font-semibold text-xl'>
                         <Link to='/'>ADINSPIRATION</Link>
                     </h1>
                 </div>

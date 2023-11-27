@@ -13,7 +13,7 @@ const LoginForm: React.FC = () => {
   
   return (
     <form className="flex flex-col justify-center items-center w-full">
-      <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2 shadow-sm">
+      <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2 shadow-md">
         <input
           type="email"
           placeholder="Enter email address"
@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2 shadow-sm">
+      <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2 shadow-md">
         <input
           type="password"
           placeholder="Your password"
@@ -30,7 +30,7 @@ const LoginForm: React.FC = () => {
         />
       </div>
       <button
-        className="text-md bg-black rounded-full text-white py-2 px-4 w-full my-2"
+        className="text-md bg-black rounded-full text-white py-2 px-4 w-full my-4"
         onSubmit={handleSubmit}
       >
         Sign in

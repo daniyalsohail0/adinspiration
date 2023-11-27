@@ -1,10 +1,13 @@
 import React from "react";
 import Layout from "../../layout";
+import MultiStepForm from "./components/MultiStepForm";
 
 const SignUp: React.FC = () => {
   return (
     <Layout>
-      <div>SignUp</div>
+      <div className="flex justify-center items-center">
+        <MultiStepForm />
+      </div>
     </Layout>
   );
 };

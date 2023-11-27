@@ -1,14 +1,14 @@
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 
-interface Step2Props {
+interface Step5Props {
   formData: any;
   handleChange: (name: string, value: string) => void;
   nextStep: () => void;
   prevStep: () => void;
 }
 
-const Step2: React.FC<Step2Props> = ({
+const Step5: React.FC<Step5Props> = ({
   formData,
   handleChange,
   nextStep,
@@ -63,4 +63,4 @@ const Step2: React.FC<Step2Props> = ({
   );
 };
 
-export default Step2;
+export default Step5;

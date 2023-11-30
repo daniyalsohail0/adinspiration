@@ -5,6 +5,7 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import Step5 from "./Step5";
 
+
 const MultiStepForm: React.FC = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -12,16 +13,16 @@ const MultiStepForm: React.FC = () => {
     lastName: "",
     email: "",
     password: "",
-    confirmPassword: "",
     companyType: "",
-    marketingMessage: "",
-    hireCreator: "",
+    userMessage: "",
+    hireUGC: false,
+    subscription: "Free"
   });
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
-  const handleChange = (name: string, value: string) => {
+  const handleChange = (name: string, value: any) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,

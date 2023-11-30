@@ -15,17 +15,15 @@ const Step2: React.FC<Step2Props> = ({
   prevStep,
 }) => {
   const handleNext = () => {
-    // Validate and proceed to the next step
     nextStep();
   };
 
   const handlePrev = () => {
-    // Go back to the previous step
     prevStep();
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-1/3">
+    <div className="flex flex-col justify-center items-center w-full md:w-5/12">
       <button
         className="place-self-start flex items-center gap-2 text-[#9E9E9E] my-10"
         onClick={handlePrev}
@@ -50,7 +48,6 @@ const Step2: React.FC<Step2Props> = ({
           placeholder="Confirm password"
           value={formData.confirmPassword}
           className="py-1 px-2 focus:outline-none bg-transparent w-full"
-          onChange={(e) => handleChange("confirmPassword", e.target.value)}
         />
       </div>
       <button

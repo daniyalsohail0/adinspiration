@@ -10,12 +10,11 @@ interface Step1Props {
 
 const Step1: React.FC<Step1Props> = ({ formData, handleChange, nextStep }) => {
   const handleNext = () => {
-    // Validate and proceed to the next step
     nextStep();
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-1/3 h-full">
+    <div className="flex flex-col justify-center items-center w-full md:w-5/12">
       <h2 className="text-5xl font-semibold text-center my-10">
         JOIN ADINSPIRATION
       </h2>

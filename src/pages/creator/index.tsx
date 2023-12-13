@@ -4,7 +4,7 @@ import UserInfo from "./components/UserInfo";
 
 import userImage from "../../assets/userImage.svg";
 import Card from "./components/Card";
-import collections, { CardProps } from "./components/UserData";
+import collections from "./components/UserData";
 
 const Creator = () => {
   return (

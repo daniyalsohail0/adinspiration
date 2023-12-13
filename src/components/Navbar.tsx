@@ -6,8 +6,8 @@ const Navbar: React.FC = () => {
         <nav className='w-full flex justify-center items-center'>
             <div className='flex justify-between w-3/4 py-3 m-2'>
                 <ul className='flex gap-4 text-sm font-semibold'>
-                    <li>Gallery</li>
-                    <li>+ Upload new ad</li>
+                    <li><Link to='/gallery'>Gallery</Link></li>
+                    <li><Link to='/upload-ad'>+ Upload new ad</Link></li>
                 </ul>
                 <div>
                     <h1 className='font-semibold text-xl'>

@@ -71,6 +71,9 @@ const UserInfo: React.FC<UserProps> = ({ userImage }) => {
                 height={42}
               />
             </a>
+            <button className="text-sm bg-black rounded-full text-white py-2 px-4">
+              Work with me
+            </button>
           </div>
         </div>
       </div>

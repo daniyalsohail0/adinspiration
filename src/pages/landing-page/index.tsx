@@ -6,8 +6,12 @@ import SearchBar from "./components/SearchBar";
 import Filter from "./components/Filter";
 import Card from "./components/Card";
 import data, { UserData } from "./components/UserData";
+import useCollections from "../../hooks/useCollections";
 
 const LandingPage: React.FC = () => {
+  const collections = useCollections()
+
+  console.log(collections)
   return (
     <Layout>
       <div className="flex justify-center items-center p-2 m-2">

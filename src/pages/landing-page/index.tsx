@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../../layout";
 
+import Layout from "../../layout";
 import banner from "../../assets/bannerImage.svg";
 import SearchBar from "./components/SearchBar";
 import Filter from "./components/Filter";
@@ -27,6 +27,7 @@ const LandingPage: React.FC = () => {
               imgUrl={item.imgUrl}
               userImg={item.userImg}
               username={item.username}
+              link={item.link}
             />
           ))}
         </div>

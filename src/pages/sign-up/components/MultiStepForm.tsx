@@ -32,6 +32,8 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ handleClose }) => {
     }));
   };
 
+  console.log(formData)
+
   switch (step) {
     case 1:
       return (

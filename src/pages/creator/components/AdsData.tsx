@@ -3,7 +3,7 @@ export interface CardProps {
   link: string;
 }
 
-const collections = [
+const ads = [
   {
     imgUrl: require("../../../assets/Frame 204.svg").default,
     link: "",
@@ -38,4 +38,4 @@ const collections = [
   },
 ];
 
-export default collections;
+export default ads;

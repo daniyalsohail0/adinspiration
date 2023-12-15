@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-interface CardData {
+interface AdCardData {
   imgUrl: string;
   link: string;
 }
 
-const Card: React.FC<CardData> = ({ imgUrl, link }) => {
+const AdCard: React.FC<AdCardData> = ({ imgUrl, link }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <Link to={link}>
-        <div className="bg-[#F8F7F4] flex flex-col justify-center items-center rounded-3xl shadow-lg">
+        <div className="bg-[#F8F7F4] flex flex-col justify-center items-center rounded-3xl shadow-lg p-2">
           <img
             src={imgUrl}
             alt="card"
@@ -22,4 +22,4 @@ const Card: React.FC<CardData> = ({ imgUrl, link }) => {
   );
 };
 
-export default Card;
+export default AdCard;

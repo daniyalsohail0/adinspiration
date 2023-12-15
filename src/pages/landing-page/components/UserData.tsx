@@ -12,7 +12,7 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-1.svg").default,
     userImg: require("../../../assets/user1.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-3.svg").default,
     userImg: require("../../../assets/user3.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-1.svg").default,
     userImg: require("../../../assets/user1.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 6,
@@ -54,14 +54,14 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-3.svg").default,
     userImg: require("../../../assets/user3.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 8,
     imgUrl: require("../../../assets/test-image-4.svg").default,
     userImg: require("../../../assets/user4.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 9,
@@ -75,7 +75,7 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-2.svg").default,
     userImg: require("../../../assets/user2.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 11,
@@ -89,7 +89,7 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-4.svg").default,
     userImg: require("../../../assets/user4.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 13,
@@ -103,7 +103,7 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-2.svg").default,
     userImg: require("../../../assets/user2.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
   {
     id: 15,
@@ -117,7 +117,7 @@ const data: UserData[] = [
     imgUrl: require("../../../assets/test-image-4.svg").default,
     userImg: require("../../../assets/user4.svg").default,
     username: "username",
-    link: "/creator",
+    link: "/brand",
   },
 ];
 

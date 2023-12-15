@@ -1,11 +1,12 @@
 import React from "react";
-import { IoArrowBackOutline } from "react-icons/io5";
+import { IoArrowBackOutline, IoCloseOutline } from "react-icons/io5";
 
 interface Step2Props {
   formData: any;
   handleChange: (name: string, value: string) => void;
   nextStep: () => void;
   prevStep: () => void;
+  handleClose: () => void;
 }
 
 const Step2: React.FC<Step2Props> = ({
@@ -13,6 +14,7 @@ const Step2: React.FC<Step2Props> = ({
   handleChange,
   nextStep,
   prevStep,
+  handleClose,
 }) => {
   const handleNext = () => {
     nextStep();
@@ -23,39 +25,56 @@ const Step2: React.FC<Step2Props> = ({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full md:w-5/12">
-      <button
-        className="place-self-start flex items-center gap-2 text-[#9E9E9E] my-10"
-        onClick={handlePrev}
-      >
-        <IoArrowBackOutline className="text-2xl" />
-        <span>Back</span>
-      </button>
-      <p className="font-semibold place-self-start my-3">Create password</p>
-      <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2 shadow-md">
-        <input
-          type="password"
-          placeholder="Create password"
-          value={formData.password}
-          className="py-1 px-2 focus:outline-none bg-transparent w-full"
-          onChange={(e) => handleChange("password", e.target.value)}
-        />
+    <div className="flex flex-col justify-center items-center w-full p-4">
+      <div className="flex justify-between items-center w-full">
+        <button
+          className="flex items-center gap-2 text-[#9E9E9E] text-sm"
+          onClick={handlePrev}
+        >
+          <IoArrowBackOutline className="text-xl" />
+          <span>Back</span>
+        </button>
+        <button onClick={() => handleClose()}>
+          <IoCloseOutline className="text-2xl text-[#9E9E9E]" />
+        </button>
       </div>
-      <p className="font-semibold place-self-start my-3">Confirm password</p>
-      <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2 shadow-md">
-        <input
-          type="password"
-          placeholder="Confirm password"
-          value={formData.confirmPassword}
-          className="py-1 px-2 focus:outline-none bg-transparent w-full"
-        />
+      <div className="py-10 flex flex-col justify-center items-center">
+        <div className="flex gap-6 w-3/4">
+          <div>
+            <p className="font-semibold place-self-start my-3 text-sm">
+              Create password
+            </p>
+            <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2">
+              <input
+                type="password"
+                placeholder="Create password"
+                value={formData.password}
+                className="py-1 px-2 focus:outline-none bg-transparent w-full text-sm"
+                onChange={(e) => handleChange("password", e.target.value)}
+              />
+            </div>
+          </div>
+          <div>
+            <p className="font-semibold place-self-start my-3 text-sm">
+              Confirm password
+            </p>
+            <div className="py-2 px-4 bg-[#F8F7F4] rounded-3xl w-full my-2">
+              <input
+                type="password"
+                placeholder="Confirm password"
+                value={formData.confirmPassword}
+                className="py-1 px-2 focus:outline-none bg-transparent w-full text-sm"
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          className="text-md bg-black rounded-full text-white py-2 px-4 w-3/4 my-4"
+          onClick={handleNext}
+        >
+          Next
+        </button>
       </div>
-      <button
-        className="text-md bg-black rounded-full text-white py-2 px-4 w-full my-4"
-        onClick={handleNext}
-      >
-        Next
-      </button>
     </div>
   );
 };

@@ -6,12 +6,14 @@ interface Step5Props {
   handleChange: (name: string, value: string) => void;
   nextStep: () => void;
   prevStep: () => void;
+  handleClose: () => void;
 }
 
 const Step5: React.FC<Step5Props> = ({
   formData,
   handleChange,
   prevStep,
+  handleClose,
 }) => {
   const handlePrev = () => {
     // Go back to the previous step

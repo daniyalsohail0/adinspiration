@@ -5,8 +5,11 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import Step5 from "./Step5";
 
+interface MultiStepFormProps {
+  handleClose: () => void;
+}
 
-const MultiStepForm: React.FC = () => {
+const MultiStepForm: React.FC<MultiStepFormProps> = ({ handleClose }) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -16,7 +19,7 @@ const MultiStepForm: React.FC = () => {
     companyType: "",
     userMessage: "",
     hireUGC: false,
-    subscription: "Free"
+    subscription: "Free",
   });
 
   const nextStep = () => setStep(step + 1);
@@ -36,6 +39,7 @@ const MultiStepForm: React.FC = () => {
           formData={formData}
           handleChange={handleChange}
           nextStep={nextStep}
+          handleClose={handleClose}
         />
       );
     case 2:
@@ -45,6 +49,7 @@ const MultiStepForm: React.FC = () => {
           handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
+          handleClose={handleClose}
         />
       );
     case 3:
@@ -54,6 +59,7 @@ const MultiStepForm: React.FC = () => {
           handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
+          handleClose={handleClose}
         />
       );
     case 4:
@@ -63,6 +69,7 @@ const MultiStepForm: React.FC = () => {
           handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
+          handleClose={handleClose}
         />
       );
     case 5:
@@ -72,6 +79,7 @@ const MultiStepForm: React.FC = () => {
           handleChange={handleChange}
           nextStep={nextStep}
           prevStep={prevStep}
+          handleClose={handleClose}
         />
       );
     default:

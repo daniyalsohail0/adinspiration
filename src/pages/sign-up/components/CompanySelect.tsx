@@ -22,7 +22,7 @@ const Filter: React.FC<SelectProps> = ({ options, value, onChange }) => {
   };
 
   return (
-    <div>
+    <div className="text-sm">
       <button
         className="flex justify-between items-center gap-2 border-2 border-solid border-[#EBEBED] px-4 py-2 rounded-full w-full"
         onClick={toggleDropdown}
@@ -31,7 +31,7 @@ const Filter: React.FC<SelectProps> = ({ options, value, onChange }) => {
         <FaAngleDown />
       </button>
       {isOpen && (
-        <div className="absolute mt-2 bg-white border border-gray-300 rounded shadow-md w-1/3 z-[1]">
+        <div className="absolute mt-2 bg-white border border-gray-300 rounded z-[1]">
           <ul>
             {options.map((item, index) => (
               <li

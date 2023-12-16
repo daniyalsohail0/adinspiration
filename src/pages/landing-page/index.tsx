@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Layout from "../../layout";
 import banner from "../../assets/bannerImage.svg";
@@ -6,9 +6,22 @@ import SearchBar from "../../components/custom/SearchBar";
 import Filter from "../../components/custom/Filter";
 import UserCard from "../../components/custom/UserCard";
 
-import userData from "../../utils/userData";
+import userData, { UserData } from "../../utils/userData";
 
 const LandingPage: React.FC = () => {
+  const [originalData] = useState<UserData[]>(userData);
+  const [data, setData] = useState<UserData[]>(originalData);
+
+  const handleSearch = (query: string) => {
+    const searchResults = originalData.filter((user) =>
+      user.username.toLowerCase().includes(query.toLowerCase())
+    );
+    setData(searchResults);
+  };
+
+  const handleClear = () => {
+    setData(originalData);
+  };
   return (
     <Layout>
       <div className="flex justify-center items-center p-2 m-2">
@@ -16,13 +29,13 @@ const LandingPage: React.FC = () => {
       </div>
       <div className="flex justify-center items-center w-full">
         <div className="flex justify-between items-center w-3/4">
-          <SearchBar />
+          <SearchBar onSearch={handleSearch} onClear={handleClear} />
           <Filter />
         </div>
       </div>
       <div className="flex justify-center items-center w-full my-4">
         <div className="grid grid-cols-4 gap-10 justify-between w-3/4">
-          {userData.map((user, index) => (
+          {data.map((user, index) => (
             <UserCard
               key={user.id}
               imgUrl={user.imgUrl}

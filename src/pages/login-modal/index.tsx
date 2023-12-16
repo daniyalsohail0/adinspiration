@@ -1,18 +1,20 @@
 import React from "react";
 import GoogleLogin from "./components/GoogleLogin";
 import LoginForm from "./components/LoginForm";
-import { Link } from "react-router-dom";
 import { IoCloseOutline } from "react-icons/io5";
 
 interface LoginModalProps {
-  handleClose: () => void;
+  handleLoginClose: () => void;
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({ handleClose }) => {
+const LoginModal: React.FC<LoginModalProps> = ({ handleLoginClose }) => {
+  const handleSignupToggle = () => {
+    handleLoginClose();
+  }
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
       <div className="flex flex-col justify-center items-center w-2/5 z-10 bg-white p-4">
-        <button className="place-self-end" onClick={() => handleClose()}>
+        <button className="place-self-end" onClick={() => handleLoginClose()}>
           <IoCloseOutline className="text-2xl text-[#9E9E9E]" />
         </button>
         <div className="flex flex-col justify-center items-center">
@@ -29,9 +31,9 @@ const LoginModal: React.FC<LoginModalProps> = ({ handleClose }) => {
           <LoginForm />
           <div className="m-4 text-xs">
             Don't have an account?{" "}
-            <Link to="/signup" className="text-blue-800 underline">
+            <button onClick={handleSignupToggle} className="text-blue-800 underline">
               Sign up
-            </Link>
+            </button>
           </div>
         </div>
         <br />

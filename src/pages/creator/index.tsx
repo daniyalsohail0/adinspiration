@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Layout from "../../layout";
-import UserInfo from "./components/UserInfo";
 
+import Layout from "../../layout";
 import userImage from "../../assets/userImage.svg";
-import AdCard from "./components/AdCard";
-import ads from "./components/AdsData";
-import collections from "./components/CollectionsData";
-import CollectionCard from "./components/CollectionCard";
-import Filter from "../landing-page/components/Filter";
+import UserInfo from "../../components/custom/UserInfo";
+import AdCard from "../../components/custom/AdCard";
+import CollectionCard from "../../components/custom/CollectionCard";
+import Filter from "../../components/custom/Filter";
+import ads from "../../utils/adsData";
+import collections from "../../utils/collectionData";
 
 const Creator: React.FC = () => {
   const [toggle, setToggle] = useState<boolean>(false);

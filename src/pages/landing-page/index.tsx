@@ -2,16 +2,13 @@ import React from "react";
 
 import Layout from "../../layout";
 import banner from "../../assets/bannerImage.svg";
-import SearchBar from "./components/SearchBar";
-import Filter from "./components/Filter";
-import Card from "./components/Card";
-import data, { UserData } from "./components/UserData";
-import useCollections from "../../hooks/useCollections";
+import SearchBar from "../../components/custom/SearchBar";
+import Filter from "../../components/custom/Filter";
+import UserCard from "../../components/custom/UserCard";
+
+import userData from "../../utils/userData";
 
 const LandingPage: React.FC = () => {
-  const collections = useCollections()
-
-  console.log(collections)
   return (
     <Layout>
       <div className="flex justify-center items-center p-2 m-2">
@@ -25,13 +22,13 @@ const LandingPage: React.FC = () => {
       </div>
       <div className="flex justify-center items-center w-full my-4">
         <div className="grid grid-cols-4 gap-10 justify-between w-3/4">
-          {data.map((item: UserData) => (
-            <Card
-              key={item.id}
-              imgUrl={item.imgUrl}
-              userImg={item.userImg}
-              username={item.username}
-              link={item.link}
+          {userData.map((user, index) => (
+            <UserCard
+              key={user.id}
+              imgUrl={user.imgUrl}
+              userImg={user.userImg}
+              username={user.username}
+              link={user.link}
             />
           ))}
         </div>

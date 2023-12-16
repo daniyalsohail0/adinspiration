@@ -1,12 +1,12 @@
 import React from "react";
 
-import userLogo from "../../../assets/user.svg";
-import locationLogo from "../../../assets/location.svg";
-import videoLogo from "../../../assets/videos.svg";
-import instagram from "../../../assets/instagramLogo.svg";
-import tiktok from "../../../assets/tiktok.svg";
-import twitter from "../../../assets/twitter.svg";
-import website from "../../../assets/websiteLink.svg";
+import userLogo from "../../assets/user.svg";
+import locationLogo from "../../assets/location.svg";
+import videoLogo from "../../assets/videos.svg";
+import instagram from "../../assets/instagramLogo.svg";
+import tiktok from "../../assets/tiktok.svg";
+import twitter from "../../assets/twitter.svg";
+import website from "../../assets/websiteLink.svg";
 
 interface UserProps {
   userImage: string;

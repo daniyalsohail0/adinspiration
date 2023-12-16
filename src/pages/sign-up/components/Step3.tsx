@@ -7,7 +7,7 @@ interface Step3Props {
   handleChange: (name: string, value: string) => void;
   nextStep: () => void;
   prevStep: () => void;
-  handleClose: () => void;
+  handleSignupClose: () => void;
 }
 
 const Step3: React.FC<Step3Props> = ({
@@ -15,7 +15,7 @@ const Step3: React.FC<Step3Props> = ({
   handleChange,
   nextStep,
   prevStep,
-  handleClose,
+  handleSignupClose,
 }) => {
   const handleNext = () => {
     // Validate and proceed to the next step
@@ -52,7 +52,7 @@ const Step3: React.FC<Step3Props> = ({
           <IoArrowBackOutline className="text-xl" />
           <span>Back</span>
         </button>
-        <button onClick={() => handleClose()}>
+        <button onClick={() => handleSignupClose()}>
           <IoCloseOutline className="text-2xl text-[#9E9E9E]" />
         </button>
       </div>

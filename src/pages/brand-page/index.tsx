@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "../../layout";
-import BrandInfo from "./components/BrandInfo";
+import BrandInfo from "../../components/custom/BrandInfo";
 import brandImage from "../../assets/brandPlaceholder.svg";
-import ads from "./components/AdsData";
-import AdCard from "./components/AdCard";
+import ads from "../../utils/adsData";
+import AdCard from "../../components/custom/AdCard";
 
 const Brand: React.FC = () => {
   return (

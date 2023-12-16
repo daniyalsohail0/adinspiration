@@ -6,14 +6,14 @@ interface Step5Props {
   handleChange: (name: string, value: string) => void;
   nextStep: () => void;
   prevStep: () => void;
-  handleClose: () => void;
+  handleSignupClose: () => void;
 }
 
 const Step5: React.FC<Step5Props> = ({
   formData,
   handleChange,
   prevStep,
-  handleClose,
+  handleSignupClose,
 }) => {
   const handlePrev = () => {
     // Go back to the previous step
@@ -38,7 +38,7 @@ const Step5: React.FC<Step5Props> = ({
           <IoArrowBackOutline className="text-xl" />
           <span>Back</span>
         </button>
-        <button onClick={() => handleClose()}>
+        <button onClick={() => handleSignupClose()}>
           <IoCloseOutline className="text-2xl text-[#9E9E9E]" />
         </button>
       </div>

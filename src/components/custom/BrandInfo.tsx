@@ -1,5 +1,5 @@
 import React from "react";
-import weblogo from '../../../assets/weblogo.svg'
+import weblogo from '../../assets/weblogo.svg'
 
 interface BrandInfoProps {
   imgUrl: string;

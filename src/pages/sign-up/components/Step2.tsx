@@ -6,7 +6,7 @@ interface Step2Props {
   handleChange: (name: string, value: string) => void;
   nextStep: () => void;
   prevStep: () => void;
-  handleClose: () => void;
+  handleSignupClose: () => void;
 }
 
 const Step2: React.FC<Step2Props> = ({
@@ -14,7 +14,7 @@ const Step2: React.FC<Step2Props> = ({
   handleChange,
   nextStep,
   prevStep,
-  handleClose,
+  handleSignupClose,
 }) => {
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
@@ -53,7 +53,7 @@ const Step2: React.FC<Step2Props> = ({
           <IoArrowBackOutline className="text-xl" />
           <span>Back</span>
         </button>
-        <button onClick={() => handleClose()}>
+        <button onClick={() => handleSignupClose()}>
           <IoCloseOutline className="text-2xl text-[#9E9E9E]" />
         </button>
       </div>

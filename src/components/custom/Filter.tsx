@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 
-import filters from "./FilterData";
+import categories from "../../utils/categories";
 
 const Filter: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,14 +24,14 @@ const Filter: React.FC = () => {
           <div>
             <p className="p-2 text-xs text-[#9E9E9E]">Categories:</p>
             <div className="grid grid-cols-2 gap-2 p-2">
-              {filters.map((filter) => (
+              {categories.map((category) => (
                 <>
                   <div className="p-2 border-[1px] border-gray-200 border-black rounded-full flex justify-between items-center gap-2">
                     <span className="pl-2 text-sm font-semibold">
-                      {filter.name}
+                      {category.name}
                     </span>
                     <span className="pr-2 text-xs text-[#9E9E9E]">
-                      {filter.count}
+                      {category.count}
                     </span>
                   </div>
                 </>

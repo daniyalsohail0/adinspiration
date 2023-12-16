@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import googleLogo from "../../../assets/google.svg";
 import { Link } from "react-router-dom";
 import { IoCloseOutline } from "react-icons/io5";
+import SignUpModal from "..";
+import LoginModal from "../../login-modal";
 
 interface Step1Props {
   formData: any;
   handleChange: (name: string, value: string) => void;
   nextStep: () => void;
-  handleClose: () => void;
+  handleSignupClose: () => void;
 }
 
 const Step1: React.FC<Step1Props> = ({
   formData,
   handleChange,
   nextStep,
-  handleClose,
+  handleSignupClose,
 }) => {
+  const [loginModal, setLoginModal] = useState<boolean>(false);
+
+  const handleLoginModalOpen = () => {
+    setLoginModal(true);
+  };
+
+  const handleLoginModalClose = () => {
+    setLoginModal(false);
+  };
+
   const handleNext = () => {
     nextStep();
   };
 
   return (
     <div className="flex flex-col justify-center items-center w-full p-4">
-      <button className="place-self-end" onClick={() => handleClose()}>
+      <button className="place-self-end" onClick={() => handleSignupClose()}>
         <IoCloseOutline className="text-2xl text-[#9E9E9E]" />
       </button>
       <div className="w-3/4 flex flex-col justify-center items-center p-4">
@@ -56,10 +68,18 @@ const Step1: React.FC<Step1Props> = ({
         </button>
         <div className="m-4 text-xs">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-900 underline">
+          <button
+            onClick={handleLoginModalOpen}
+            className="text-blue-900 underline"
+          >
             Log in
-          </Link>
+          </button>
         </div>
+        {loginModal ? (
+          <LoginModal handleLoginClose={handleLoginModalClose} />
+        ) : (
+          <div style={{ display: "none" }}></div>
+        )}
       </div>
       <br />
     </div>

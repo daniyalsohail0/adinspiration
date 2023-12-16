@@ -8,7 +8,7 @@ interface CardData {
   link: string;
 }
 
-const Card: React.FC<CardData> = ({ imgUrl, userImg, username, link }) => {
+const UserCard: React.FC<CardData> = ({ imgUrl, userImg, username, link }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="bg-[#F8F7F4] p-3 flex flex-col justify-center items-center rounded-2xl shadow-lg">
@@ -24,4 +24,4 @@ const Card: React.FC<CardData> = ({ imgUrl, userImg, username, link }) => {
   );
 };
 
-export default Card;
+export default UserCard;

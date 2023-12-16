@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import LoginModal from "../pages/login-modal";
-import SignUpModal from "../pages/sign-up";
+import LoginModal from "../../pages/login-modal";
+import SignUpModal from "../../pages/sign-up";
+import Button from "./Button";
 
 const Navbar: React.FC = () => {
   const [loginModal, setLoginModal] = useState<boolean>(false);
@@ -46,12 +47,18 @@ const Navbar: React.FC = () => {
             Log in
           </button>
           <span className="mx-3 font-[#9E9E9E]"> | </span>
-          <button className="text-sm bg-black rounded-full text-white py-2 px-4" onClick={handleSignupModalOpen}>
-            Sign up
-          </button>
+          <Button text={"Sign up"} handleClick={handleSignupModalOpen} />
         </div>
-        {loginModal ? <LoginModal handleClose={handleLoginModalClose} /> : <div style={{ display: "none" }}></div>}
-        {signupModal ? <SignUpModal handleClose={handleSignupModalClose} /> : <div style={{ display: "none" }}></div>}
+        {loginModal ? (
+          <LoginModal handleLoginClose={handleLoginModalClose} />
+        ) : (
+          <div style={{ display: "none" }}></div>
+        )}
+        {signupModal ? (
+          <SignUpModal handleSignupClose={handleSignupModalClose} />
+        ) : (
+          <div style={{ display: "none" }}></div>
+        )}
       </div>
     </nav>
   );

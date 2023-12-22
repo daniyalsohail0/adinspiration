@@ -9,6 +9,17 @@ interface Step5Props {
   handleSignupClose: () => void;
 }
 
+export interface SignupData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  companyType: string;
+  userMessage: string;
+  hireUGC: boolean;
+  subscription: string;
+}
+
 const Step5: React.FC<Step5Props> = ({
   formData,
   handleChange,
@@ -98,7 +109,7 @@ const Step5: React.FC<Step5Props> = ({
             </div>
             <button
               className="text-md bg-black rounded-full text-xs className='text-xs' text-white py-2 px-4 w-full"
-              onClick={handleFreeSubscription}
+              onSubmit={handleFreeSubscription}
             >
               Start for free
             </button>
@@ -179,7 +190,7 @@ const Step5: React.FC<Step5Props> = ({
             <br />
             <button
               className="text-md bg-white rounded-full text-xs text-black py-2 px-4 w-full"
-              onClick={handlePaidSubscription}
+              onSubmit={handlePaidSubscription}
             >
               Go Pro
             </button>

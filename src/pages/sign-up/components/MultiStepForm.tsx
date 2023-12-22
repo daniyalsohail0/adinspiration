@@ -9,7 +9,9 @@ interface MultiStepFormProps {
   handleSignupClose: () => void;
 }
 
-const MultiStepForm: React.FC<MultiStepFormProps> = ({ handleSignupClose }) => {
+const MultiStepForm: React.FC<MultiStepFormProps> = ({
+  handleSignupClose,
+}) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -31,8 +33,6 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({ handleSignupClose }) => {
       [name]: value,
     }));
   };
-
-  console.log(formData)
 
   switch (step) {
     case 1:

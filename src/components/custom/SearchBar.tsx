@@ -9,8 +9,6 @@ interface SearchComponents {
 const SearchBar: React.FC<SearchComponents> = ({ onSearch, onClear }) => {
   const [query, setQuery] = useState<string>("");
 
-  console.log(query.length)
-
   if(query.length === 0) {
     onClear()
   }

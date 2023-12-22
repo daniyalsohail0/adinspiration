@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Layout from "../../layout";
 import banner from "../../assets/bannerImage.svg";
@@ -7,10 +7,16 @@ import Filter from "../../components/custom/Filter";
 import UserCard from "../../components/custom/UserCard";
 
 import userData, { UserData } from "../../utils/userData";
+import useCollections from "../../hooks/useCollections";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 const LandingPage: React.FC = () => {
+  const state = useSelector((state: RootState) => state.login);
   const [originalData] = useState<UserData[]>(userData);
   const [data, setData] = useState<UserData[]>(originalData);
+
+  const collections = useCollections();
 
   const handleSearch = (query: string) => {
     const searchResults = originalData.filter((user) =>
@@ -33,6 +39,7 @@ const LandingPage: React.FC = () => {
           <Filter />
         </div>
       </div>
+      {state.role}
       <div className="flex justify-center items-center w-full my-4">
         <div className="grid grid-cols-4 gap-10 justify-between w-3/4">
           {data.map((user, index) => (

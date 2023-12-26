@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import googleLogo from "../../../assets/google.svg";
-import { Link } from "react-router-dom";
 import { IoCloseOutline } from "react-icons/io5";
-import SignUpModal from "..";
 import LoginModal from "../../login-modal";
 
 interface Step1Props {

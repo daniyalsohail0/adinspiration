@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IoArrowBackOutline, IoCloseOutline } from "react-icons/io5";
 
 interface Step2Props {
@@ -16,24 +16,6 @@ const Step2: React.FC<Step2Props> = ({
   prevStep,
   handleSignupClose,
 }) => {
-  const [password, setPassword] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
-  const [isValid, setIsValid] = useState<boolean>(false);
-  const [isEqual, setIsEqual] = useState<boolean>(false);
-
-  const validatePassword = (value: string) => {
-    const hasCapital = /[A-Z]/.test(value);
-    const hasNumber = /\d/.test(value);
-    const hasSpecialCharacter = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value);
-
-    setIsValid(hasCapital && hasNumber && hasSpecialCharacter);
-  };
-
-  const checkPassword = (password: string, confirmPassword: string) => {
-    if (password === confirmPassword) {
-      setIsEqual(true);
-    }
-  };
 
   const handleNext = () => {
     nextStep();

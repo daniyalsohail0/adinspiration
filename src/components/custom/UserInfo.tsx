@@ -7,6 +7,7 @@ import instagram from "../../assets/instagramLogo.svg";
 import tiktok from "../../assets/tiktok.svg";
 import twitter from "../../assets/twitter.svg";
 import website from "../../assets/websiteLink.svg";
+import { Link } from "react-router-dom";
 
 interface UserProps {
   userImage: string;
@@ -44,33 +45,33 @@ const UserInfo: React.FC<UserProps> = ({ userImage }) => {
             </p>
           </div>
           <div className="flex items-center gap-5 py-4">
-            <a href="">
+            <Link to="">
               <img src={tiktok} alt="Tiktok user link" width={42} height={42} />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="">
               <img
                 src={instagram}
                 alt="Tiktok user link"
                 width={42}
                 height={42}
               />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="">
               <img
                 src={twitter}
                 alt="Tiktok user link"
                 width={42}
                 height={42}
               />
-            </a>
-            <a href="">
+            </Link>
+            <Link to="">
               <img
                 src={website}
                 alt="Tiktok user link"
                 width={42}
                 height={42}
               />
-            </a>
+            </Link>
             <button className="text-sm bg-black rounded-full text-white py-2 px-4">
               Work with me
             </button>

@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../state/store";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../state/login/loginSlice";
-import { useNavigate } from "react-router";
 
 interface Props {
   handleLoginClose: () => void;
@@ -13,7 +12,6 @@ interface Props {
 const LoginForm: React.FC<Props> = ({ handleLoginClose }) => {
   const state = useSelector((state: RootState) => state.login);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -7,7 +7,6 @@ import Filter from "../../components/custom/Filter";
 import UserCard from "../../components/custom/UserCard";
 
 import userData, { UserData } from "../../utils/userData";
-import useCollections from "../../hooks/useCollections";
 import { useSelector } from "react-redux";
 import { RootState } from "../../state/store";
 
@@ -15,8 +14,6 @@ const LandingPage: React.FC = () => {
   const state = useSelector((state: RootState) => state.login);
   const [originalData] = useState<UserData[]>(userData);
   const [data, setData] = useState<UserData[]>(originalData);
-
-  const collections = useCollections();
 
   const handleSearch = (query: string) => {
     const searchResults = originalData.filter((user) =>

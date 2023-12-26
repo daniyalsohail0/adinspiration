@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import LoginModal from "../../pages/login-modal";
 import SignUpModal from "../../pages/sign-up";
 import Button from "./Button";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 
 const Navbar: React.FC = () => {
+  const state = useSelector((state: RootState) => state.login);
   const [loginModal, setLoginModal] = useState<boolean>(false);
   const [signupModal, setSignupModal] = useState<boolean>(false);
+
+  console.log(state.isLoggedIn, state.role);
 
   const handleLoginModalOpen = () => {
     setLoginModal(true);
